@@ -1,5 +1,6 @@
 package com.agl.bixi.rest;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +35,7 @@ public class UserProfileController {
 	}
 	public static final Logger logger = LoggerFactory.getLogger(UserProfileController.class);
 	@RequestMapping(method = RequestMethod.POST,produces="application/json",consumes="application/json")
-	public ResponseEntity<UserProfile> saveUserProfile(UserProfile userprofile) throws Exception{
+	public ResponseEntity<UserProfile> saveUserProfile(@RequestBody UserProfile userprofile) throws Exception{
 		logger.info("saveUserProfile started.");
 		try {
 			com.bixi.data.domain.model.db.UserProfile objUserProfile=new com.bixi.data.domain.model.db.UserProfile();
