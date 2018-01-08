@@ -8,12 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+@NamedQueries({
+    @NamedQuery(name="UserProfile.findByUsername",
+                query="select e  from UserProfile e where e.username=:username"),
+})
 @Entity
 @Table(name="USER_PROFILE",schema="bschema")
 public class UserProfile implements Serializable{
@@ -49,6 +55,9 @@ public class UserProfile implements Serializable{
 	
 	@Column(name="address")
 	private String address;
+	
+	@Column(name="access_token")
+	private String accessToken;
 	
 	@Column(name="created_on")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -220,6 +229,22 @@ public class UserProfile implements Serializable{
 		this.createdon = createdon;
 	}
 
+
+
+	/**
+	 * @return the accessToken
+	 */
+	public String getAccessToken() {
+		return accessToken;
+	}
+
+
+	/**
+	 * @param accessToken the accessToken to set
+	 */
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
 
 
 	public UserProfile() {
