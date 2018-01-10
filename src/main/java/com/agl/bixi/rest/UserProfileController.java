@@ -1,13 +1,8 @@
 package com.agl.bixi.rest;
 
-<<<<<<< HEAD
 
 
 import java.util.List;
-=======
-import java.sql.SQLException;
-import java.util.Date;
->>>>>>> eb3c845e78b824a32dac4ee1ff877ae4279de1c4
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
