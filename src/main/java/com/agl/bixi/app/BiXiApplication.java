@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import com.bixi.repository.UserProfileRepository;
 
@@ -15,6 +16,7 @@ import com.bixi.repository.UserProfileRepository;
 @EntityScan("com.bixi.data.domain.model.db")
 @EnableJpaRepositories("com.bixi.repository")
 @SpringBootApplication(scanBasePackages={"com.agl.bixi"})
+@EnableResourceServer
 @EnableAutoConfiguration
 public class BiXiApplication {
 
