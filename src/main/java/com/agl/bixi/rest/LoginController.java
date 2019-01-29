@@ -23,7 +23,6 @@ import com.agl.bixi.model.signup.SignupReq;
  *
  */
 @RestController
-//@RequestMapping("/login")
 public class LoginController {
 	public static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
